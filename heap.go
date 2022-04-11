@@ -42,7 +42,7 @@ func (h *MaxHeap) Swap(i, j int) {
 
 //extract method returns the max item
 func (h *MaxHeap) Extract() int {
-	if len(h.HeapSlice) == 0 {
+	if len(h.HeapSlice) <= 1 {					//checking for empty heap, comparing with 1 bcz our heap has additional dummy value at 0th index
 		fmt.Println("Heap already Empty")
 		return -999
 	}
@@ -104,7 +104,7 @@ func main() {
 
 	fmt.Println("heap : ",heap)
 
-	for i:=0; i<size; i++ {
+	for i:=0; i<size+1; i++ {
 		fmt.Println("max :",heap.Extract()," and heap : ",heap)
 	}
 
